@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pagina1Activity"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X SI 0"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textStyle="bold|italic"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="100dp"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/round_back_blue1000"
+        android:text="PLAY OFFLINE"
+        android:textColor="@color/white"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PLAY ONLINE"
+        android:id="@+id/btnOn"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnOf"
+        android:background="@drawable/round_back_blue1000"
+        android:textColor="@color/white"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>
