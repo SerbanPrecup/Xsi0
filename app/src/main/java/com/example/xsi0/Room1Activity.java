@@ -66,7 +66,7 @@ public class Room1Activity extends AppCompatActivity {
                 String user1 = params[2];
 
                 JSONObject postData = new JSONObject();
-                postData.put("roomName", roomName);
+                postData.put("room", roomName);
                 postData.put("user1",user1);
 
                 URL url = new URL("http://127.0.0.1:5000" + endpoint);

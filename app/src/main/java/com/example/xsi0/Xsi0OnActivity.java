@@ -4,17 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Xsi0Activity extends AppCompatActivity {
+public class Xsi0OnActivity extends AppCompatActivity {
+
+    private TextView playerOneName,playerTwoName;
+    private ImageView image1,image2,image3,image4,image5,image6,image7,image8,image9;
+
+    private LinearLayout playerOneLayout,playerTwoLayout;
 
     private final List<int[]> combinationsList = new ArrayList<>();
 
@@ -27,31 +29,26 @@ public class Xsi0Activity extends AppCompatActivity {
 
     private int totalSelectedBox = 1;
 
-    private LinearLayout playerOneLayout,playerTwoLayout;
-    private TextView playerOneName,playerTwoName;
-
-    private ImageView image1,image2,image3,image4,image5,image6,image7,image8,image9;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_xsi0);
+        setContentView(R.layout.activity_xsi0_on);
+
+        image1=findViewById(R.id.image1);
+        image2=findViewById(R.id.image2);
+        image3=findViewById(R.id.image3);
+        image4=findViewById(R.id.image4);
+        image5=findViewById(R.id.image5);
+        image6=findViewById(R.id.image6);
+        image7=findViewById(R.id.image7);
+        image8=findViewById(R.id.image8);
+        image9=findViewById(R.id.image9);
 
         playerOneName = findViewById(R.id.playerOneName);
         playerTwoName = findViewById(R.id.playerTwoName);
 
         playerOneLayout = findViewById(R.id.playerOneLayout);
         playerTwoLayout = findViewById(R.id.playerTwoLayout);
-
-        image1 = findViewById(R.id.image1);
-        image2 = findViewById(R.id.image2);
-        image3 = findViewById(R.id.image3);
-        image4 = findViewById(R.id.image4);
-        image5 = findViewById(R.id.image5);
-        image6 = findViewById(R.id.image6);
-        image7 = findViewById(R.id.image7);
-        image8 = findViewById(R.id.image8);
-        image9 = findViewById(R.id.image9);
 
         combinationsList.add(new int[]{0,1,2});
         combinationsList.add(new int[]{3,4,5});
@@ -62,8 +59,8 @@ public class Xsi0Activity extends AppCompatActivity {
         combinationsList.add(new int[]{0,4,8});
         combinationsList.add(new int[]{2,4,6});
 
-        final String getPlayerOneName = getIntent().getStringExtra("playerOne");
-        final String getPlayerTwoName = getIntent().getStringExtra("playerTwo");
+        final String getPlayerOneName = "X"; //cum fac sa extrag
+        final String getPlayerTwoName = "0"; //cum fac sa extrag
 
         playerOneName.setText(getPlayerOneName);
         playerTwoName.setText(getPlayerTwoName);
@@ -158,6 +155,7 @@ public class Xsi0Activity extends AppCompatActivity {
             }
         });
 
+
     }
 
     private void performAction(ImageView ImageView, int selectedBox){
@@ -167,11 +165,11 @@ public class Xsi0Activity extends AppCompatActivity {
             ImageView.setImageResource(R.drawable.cross_icon);
             if(checkPlayerWin()){
 
-                WinDialog winDialog = new WinDialog(Xsi0Activity.this,playerOneName.getText().toString() + " has won the match",Xsi0Activity.this);
+                WinDialogOn winDialog = new WinDialogOn(Xsi0OnActivity.this,playerOneName.getText().toString() + " has won the match",Xsi0OnActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();
             } else if (totalSelectedBox == 9) {
-                WinDialog winDialog = new WinDialog(Xsi0Activity.this,"It is a draw!",Xsi0Activity.this);
+                WinDialogOn winDialog = new WinDialogOn(Xsi0OnActivity.this,"It is a draw!",Xsi0OnActivity.this);
                 winDialog.show();
             } else {
                 changePlayerTurn(2);
@@ -184,11 +182,11 @@ public class Xsi0Activity extends AppCompatActivity {
             ImageView.setImageResource(R.drawable.zero_icon);
             if(checkPlayerWin()){
 
-                WinDialog winDialog = new WinDialog(Xsi0Activity.this,playerTwoName.getText().toString() + " has won the match",Xsi0Activity.this);
+                WinDialogOn winDialog = new WinDialogOn(Xsi0OnActivity.this,playerTwoName.getText().toString() + " has won the match",Xsi0OnActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();
             } else if (totalSelectedBox == 9) {
-                WinDialog winDialog = new WinDialog(Xsi0Activity.this,"It is a draw!",Xsi0Activity.this);
+                WinDialogOn winDialog = new WinDialogOn(Xsi0OnActivity.this,"It is a draw!",Xsi0OnActivity.this);
                 winDialog.show();
             } else {
                 changePlayerTurn(1);
