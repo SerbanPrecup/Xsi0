@@ -24,13 +24,13 @@
             />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/startAgainBtn"
+            android:id="@+id/ExitBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@drawable/round_back_blue1000"
             android:textColor="#FFFFFF"
-            android:text="Start Again"/>
+            android:text="EXIT"/>
 
     </LinearLayout>
 </RelativeLayout>

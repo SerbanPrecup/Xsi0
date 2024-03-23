@@ -2,6 +2,7 @@ package com.example.xsi0;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,14 +27,15 @@ public class WinDialogOn extends Dialog {
         setContentView(R.layout.win_dialog_layout);
 
         final TextView messageTxt = findViewById(R.id.messageTxt);
-        final Button startAgain = findViewById(R.id.startAgainBtn);
+        final Button exitBtn = findViewById(R.id.ExitBtn);
 
         messageTxt.setText(message);
 
-        startAgain.setOnClickListener(new View.OnClickListener() {
+        exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                xsi0OnActivity.restartMatch();
+                xsi0OnActivity.exit();
+
                 dismiss();
             }
         });

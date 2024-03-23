@@ -9,6 +9,14 @@
     android:background="@drawable/background"
     tools:context=".Xsi0Activity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="REFRESH"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnRefresh"/>
+
     <LinearLayout
         android:layout_above="@+id/container"
         android:layout_alignParentTop="true"
