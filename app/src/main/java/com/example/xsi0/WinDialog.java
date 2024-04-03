@@ -14,14 +14,14 @@ public class WinDialog extends Dialog {
     private final String message;
     private final Xsi0Activity xsi0Activity;
 
-    public WinDialog(@NonNull Context context, String message, Xsi0Activity xsi0Activity){
+    public WinDialog(@NonNull Context context, String message, Xsi0Activity xsi0Activity) {
         super(context);
         this.message = message;
-        this.xsi0Activity= xsi0Activity;
+        this.xsi0Activity = xsi0Activity;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.win_dialog_layout);
 
@@ -38,7 +38,6 @@ public class WinDialog extends Dialog {
                 dismiss();
             }
         });
-
 
 
     }

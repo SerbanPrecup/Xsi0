@@ -14,14 +14,14 @@ public class WaitingRoom extends Dialog {
     private final String message;
     private final Room1Activity room1Activity;
 
-    public WaitingRoom(@NonNull Context context, String message, Room1Activity room1Activity){
+    public WaitingRoom(@NonNull Context context, String message, Room1Activity room1Activity) {
         super(context);
         this.message = message;
-        this.room1Activity= room1Activity;
+        this.room1Activity = room1Activity;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.waiting_room_layout);
 
@@ -37,13 +37,6 @@ public class WaitingRoom extends Dialog {
             }
         });
 
-//        startAgain.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                room1Activity.restartMatch();
-//                dismiss();
-//            }
-//        });
 
-
-    }}
+    }
+}

@@ -17,13 +17,13 @@ public class Pagina1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina1);
 
-        btnOf=findViewById(R.id.btnOf);
-        btnOn=findViewById(R.id.btnOn);
+        btnOf = findViewById(R.id.btnOf);
+        btnOn = findViewById(R.id.btnOn);
 
         btnOf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Pagina1Activity.this,PlayersOfActivity.class);
+                Intent intent = new Intent(Pagina1Activity.this, PlayersOfActivity.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class Pagina1Activity extends AppCompatActivity {
         btnOn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Pagina1Activity.this,MainActivity.class);
+                Intent intent = new Intent(Pagina1Activity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
