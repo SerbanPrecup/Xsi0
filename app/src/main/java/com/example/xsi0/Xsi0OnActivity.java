@@ -31,17 +31,17 @@ import java.util.Objects;
 
 public class Xsi0OnActivity extends AppCompatActivity {
 
-    TextView playerOneName, playerTwoName;
+    private TextView playerOneName, playerTwoName;
     private ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
 
     private LinearLayout playerOneLayout, playerTwoLayout;
 
 
-    String e11, e12, e13, e21, e22, e23, e31, e32, e33;
+    private String e11, e12, e13, e21, e22, e23, e31, e32, e33;
 
-    String user1, roomName;
+    private String user1, roomName;
 
-    boolean player1Turn, joc_terminat = false;
+    private boolean player1Turn, joc_terminat = false;
 
 
     @Override

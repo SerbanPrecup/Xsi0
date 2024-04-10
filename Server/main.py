@@ -51,15 +51,11 @@ with app.app_context():
     db.create_all()
 
 
-# @app.route("/get_matrice", methods=["GET"])
-# def get_matrice():
-#     return jsonify({"matrice": matrice})
-
 
 @app.route("/get_users", methods=["POST"])
 def get_users():
     request_data = request.get_json()
-    room = request_data.get("room")  # Obțineți numele camerei din cererea HTTP
+    room = request_data.get("room")
 
     room_entry = Tabel.query.filter_by(room=room).first()
     user1 = room_entry.user1
@@ -74,15 +70,13 @@ def get_users():
 @app.route("/creare_room", methods=["POST"])
 def creare_room():
     request_data = request.get_json()
-    room = request_data.get("room")  # Obțineți numele camerei din cererea HTTP
+    room = request_data.get("room")
     user1 = request_data.get("user1")
 
-    # Verificați dacă există deja o înregistrare pentru această cameră
     existing_entry = Tabel.query.filter_by(room=room).first()
     if existing_entry:
         return jsonify({"RESPONSE": "FALSE"})
 
-    # Dacă nu există, adăugați o nouă înregistrare pentru camera specificată
     new_entry = Tabel(user1=user1, room=room, e11=" ", e12=" ", e13=" ", e21=" ", e22=" ", e23=" ", e31=" ", e32=" ",
                       e33=" ", turnPlayer1=True)
 
@@ -104,7 +98,6 @@ def join_room():
         if existing_entry.user2:
             return jsonify({"RESPONSE": "FALSE"})
         else:
-            # Salvăm user2 în intrarea existentă din baza de date
             existing_entry.user2 = user2
             db.session.commit()
             return jsonify({"RESPONSE": "TRUE"})
@@ -207,12 +200,6 @@ def handle_x():
             entry.turnPlayer1 = False
             db.session.commit()
 
-            # if verificare_castig("X", entry.e11, entry.e12, entry.e13, entry.e21, entry.e22, entry.e23, entry.e31,
-            #                      entry.e32, entry.e33):
-            #     return jsonify({"RESPONSE": "X a castigat"})
-            # elif verificare_joc_terminat(entry.e11, entry.e12, entry.e13, entry.e21, entry.e22, entry.e23, entry.e31,
-            #                              entry.e32, entry.e33):
-            #     return jsonify({"RESPONSE": "EGALITATE"})
 
             return jsonify({"RESPONSE": "TRUE"})
         else:
@@ -282,14 +269,6 @@ def handle_0():
 
             entry.turnPlayer1 = True
             db.session.commit()
-
-            # if verificare_castig("0", entry.e11, entry.e12, entry.e13, entry.e21, entry.e22, entry.e23, entry.e31,
-            #                      entry.e32, entry.e33):
-            #     return jsonify({"RESPONSE": "0 a castigat"})
-            # elif verificare_joc_terminat(entry.e11, entry.e12, entry.e13, entry.e21, entry.e22, entry.e23, entry.e31,
-            #                              entry.e32, entry.e33):
-            #     return jsonify({"RESPONSE": "EGALITATE"})
-
             return jsonify({"RESPONSE": "TRUE"})
         else:
             return jsonify({"RESPONSE": "FALS"})
@@ -301,11 +280,8 @@ def handle_0():
 def sterge_room():
     request_data = request.get_json()
     room = request_data.get("room")
-
-    # Căutăm înregistrarea pentru camera specificată
     entry = Tabel.query.filter_by(room=room).first()
     if entry:
-        # Ștergem înregistrarea din baza de date
         db.session.delete(entry)
         db.session.commit()
         return jsonify({"RESPONSE": "TRUE"})

@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class Pagina1Activity extends AppCompatActivity {
 
-    Button btnOf, btnOn;
+    private Button btnOf, btnOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

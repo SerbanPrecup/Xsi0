@@ -31,8 +31,8 @@ import java.util.Map;
 
 public class Room1Activity extends AppCompatActivity {
 
-    Button btnJoin, btnCreate;
-    TextInputEditText inputRoom;
+    private Button btnJoin, btnCreate;
+    private TextInputEditText inputRoom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

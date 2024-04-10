@@ -13,8 +13,8 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputEditText inputEditText;
-    Button btn;
+    private TextInputEditText inputEditText;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
